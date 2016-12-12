@@ -5,6 +5,7 @@ import {
   Image,
 } from 'react-native';
 import Quote from './Quote'
+import NextQuoteButton from './NextQuoteButton'
 
 
 const heartImage = require('./assets/heart.png')
@@ -16,6 +17,7 @@ class QuoteScreen extends Component {
       <Image source={bgImage} style={styles.backgroundContainer}>
           <View style={styles.container}>
             <Quote quoteText={this.props.text} />
+            <NextQuoteButton onPress={this.props.onNextQuotePress}/>
           </View>
           </Image>
     )
@@ -23,7 +25,8 @@ class QuoteScreen extends Component {
 }
 
 QuoteScreen.propTypes = {
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  onNextQuotePress: PropTypes.func.isRequired,
 }
 
 const styles = StyleSheet.create({
@@ -38,8 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: '#efefef',
-    
   },
 
 
