@@ -2,7 +2,8 @@ import React,{Component, PropTypes} from 'react'
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Platform
 
 } from 'react-native'
 
@@ -10,8 +11,7 @@ class Quote extends Component {
   render(){
     return(
       <View>
-        <Text>{this.props.quoteText}</Text>
-        <Text>{this.props.quoteSource}</Text>
+        <Text style={styles.quoteText}>{this.props.quoteText}</Text>
       </View>
     )
   }
@@ -19,4 +19,15 @@ class Quote extends Component {
 Quote.propTypes = {
   quoteText: PropTypes.string.isRequired
 }
+
+const styles = StyleSheet.create({
+  quoteText: {
+    fontFamily: (Platform.OS === 'ios')?
+      'AvenirNext-Bold' :
+      'Roboto',
+    fontSize: 40,
+    marginVertical: 30,
+    marginHorizontal: 25,
+  }
+})
 export default Quote

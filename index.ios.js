@@ -15,7 +15,7 @@ const { quotes } = require('./quotes.json')
 
 class RelaxationStation extends Component {
   render() {
-    const quote = quotes[2]
+    const quote = quotes[0]
     return (
       <Navigator
         initialRoute={{ name:'StartScreen'}}
