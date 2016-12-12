@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -8,24 +7,19 @@ import {
   Navigator,
   TouchableOpacity,
 } from 'react-native';
-import StartScreen from './StartScreen'
-import QuoteScreen from './QuoteScreen'
 
-class RelaxationStation extends Component {
+const heartImage = require('./assets/heart.png')
+
+class StartScreen extends Component {
   render() {
     return (
-      <Navigator
-        initialRoute={{ name:'StartScreen'}}
-        renderScene={(route, navigator) => {
-          switch (route.name) {
-            case 'StartScreen':
-              return <StartScreen onStartHandler={() => navigator.push({ name: 'QuoteScreen'})}/>
-            case 'QuoteScreen':
-              return <QuoteScreen />
-          }
-        }}
-      />
-    )
+            <View style={styles.container}>
+              <TouchableOpacity style={styles.button} onPress={this.props.onStartHandler}>
+              <Image source={heartImage} style={styles.buttonImage}/>
+              </TouchableOpacity>
+              <Text style={styles.readyText}>Flatter me...</Text>
+            </View>
+          )
   }
 }
 
@@ -61,4 +55,5 @@ const styles = StyleSheet.create({
 
 });
 
-AppRegistry.registerComponent('RelaxationStation', () => RelaxationStation);
+export default StartScreen
+// export our new class
