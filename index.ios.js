@@ -7,10 +7,10 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-
+import Quote from './Quote'
 const heartImage = require('./assets/heart.jpg')
 
-export default class RelaxationStation extends Component {
+class RelaxationStation extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -18,6 +18,7 @@ export default class RelaxationStation extends Component {
           <Image source={heartImage} style={styles.buttonImage}/>
         </TouchableOpacity>
         <Text style={styles.readyText}>Flatter me...</Text>
+        <Quote quoteText="Amazing Quote" quoteSource="- Gr8 here" />
       </View>
     );
   }
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#161737',
+    backgroundColor: '#efefef',
   },
 
   readyText: {
@@ -38,14 +39,14 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#859a9b',
+    // backgroundColor: '#859a9b',
     borderRadius: 20,
     padding: 10,
     marginBottom: 20,
-    shadowColor: '#303838',
-    shadowOffset: { width: 0, height: 5},
-    shadowRadius: 10,
-    shadowOpacity: 0.35
+    // shadowColor: '#303838',
+    // shadowOffset: { width: 0, height: 5},
+    // shadowRadius: 10,
+    // shadowOpacity: 0.35
   },
 
   buttonImage: {
