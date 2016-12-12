@@ -12,6 +12,7 @@ class NextQuoteButton extends Component {
 	render() {
 		return (
       <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
+
       <Image source={heartImage} style={styles.buttonImage}/>
       </TouchableOpacity>
 		)
@@ -25,8 +26,8 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 	},
   buttonImage: {
-    width: 120,
-    height: 120,
+    width: 95,
+    height: 95,
     paddingTop: 20,
   }
 })

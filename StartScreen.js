@@ -6,6 +6,7 @@ import {
   Image,
   Navigator,
   TouchableOpacity,
+  Platform
 } from 'react-native';
 
 const heartImage = require('./assets/heart.png')
@@ -33,7 +34,10 @@ const styles = StyleSheet.create({
 
   readyText: {
     fontSize: 40,
-    // color: '#ffffff'
+    fontFamily: (Platform.OS === 'ios')?
+      'AvenirNext-Bold' :
+      'Roboto',
+    fontSize: 40,
   },
 
   button: {
